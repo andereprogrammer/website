@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Payment status</title>
+    <style>
+      body {
+        /* background: linear-gradient(45deg, #26283B, #5C198D, #FF76E1); */
+        background-size: 200% 200%;
+        animation: gradientAnimation 10s ease infinite;
+        font-family: Arial, sans-serif;
+      }
+
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .container {
+        max-width: 500px;
+        text-align: center;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 5px;
+        margin: 100px auto 0;
+        box-shadow: 0px 2px 12px #ebebeb;
+        border-radius: 20px;
+      }
+
+      .logo {
+        width: auto;
+        height: 20px;
+        margin-bottom: 30px;
+        background-image: url(https://uploads-ssl.webflow.com/64329c3a92ccec18fc2afd7f/646f2230913bc3bcd22d0bbc_Everheal%20logo.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      h1 {
+        color: #5c198d;
+      }
+
+      p {
+        color: #5c198d;
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      .success-symbol {
+        font-size: 50px;
+        color: green;
+        margin-bottom: 20px;
+      }
+
+      .failed-symbol-symbol {
+        font-size: 50px;
+        color: red;
+        margin-bottom: 20px;
+      }
+
+      .order-info {
+        margin-top: 30px;
+        font-size: 18px;
+        color: #5c198d;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <div class="container">
+      <div class="logo"></div>
+
+      <!-- {{#is_success}} -->
+
+      <div>
+        <h1>Payment Successful</h1>
+        <div class="success-symbol">
+          <div
+            id="container"
+            style="display: flex; align-items: center; justify-content: center"
+          >
+            <lottie-player
+              src="https://lottie.host/cd1dc1df-fc97-43c7-b29d-b34075589c90/gj4QO6zi1G.json"
+              background="Transparent"
+              speed="1"
+              style="width: 300px; height: 300px"
+              direction="1"
+              mode="normal"
+              autoplay
+              loop
+            ></lottie-player>
+          </div>
+        </div>
+        <p>
+          Thank you for choosing us. Your transaction has been successfully
+          processed.
+        </p>
+        <div class="order-info">
+          <p>Order ID: <strong>PAODODOOSDOOSD</strong></p>
+          <p>Amount: 3000</p>
+        </div>
+        <a
+          href="https://www.everheal.com"
+          style="
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            background-color: #5c198d;
+            color: #fff;
+            border-radius: 10px;
+            text-decoration: none;
+          "
+          >Return to Home</a
+        >
+      </div>
+      <!-- {{/is_success}} -->
+      <!-- {{^is_success}} -->
+
+      <!-- payment failed scenario
+      <div>
+
+        <h1 style="color: rgb(252, 86, 86)">Payment Failed</h1>
+        <div class="failed-symbol">
+          <div
+            id="failed"
+            style="display: flex; align-items: center; justify-content: center"
+          >
+            <lottie-player
+              src="https://lottie.host/b1b05372-507c-469e-aea9-97109b477e2c/SExcDJ59xP.json"
+              background="Transparent"
+              speed="1"
+              style="width: 300px; height: 300px"
+              direction="1"
+              mode="normal"
+              loop
+              autoplay
+            ></lottie-player>
+          </div>
+        </div>
+        <p style="font-weight: 700;font-size: x-large;">Please try again</p>
+        <div class="order-info">
+          <p>Order ID: <strong>PAODODOOSDOOSD</strong></p>
+          <p>Amount: 3000</p>
+        </div>
+        <a
+          href=""
+          style="
+            padding-left: 30px;
+            background-color: #5c198d;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            padding-right: 30px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+          "
+          >Retry</a
+        >
+      </div> -->
+
+
+      <!-- Payment pending Scenario  -->
+      <!-- <div>
+        <h1>Payment Pending</h1>
+        <div
+          id="pending"
+          style="display: flex; align-items: center; justify-content: center"
+        >
+          <lottie-player
+            src="https://lottie.host/4ed565f9-320f-4595-839a-13edbc5a5cc5/H9lym4oFTj.json"
+            background="Transparent"
+            speed="1"
+            style="width: 300px; height: 300px"
+            direction="1"
+            mode="normal"
+            autoplay
+          ></lottie-player>
+        </div>
+        <p style="font-weight: 700; font-size: large">Please wait for the confirmation</p>
+        <div class="order-info">
+          <p>Order ID: <strong>PAODODOOSDOOSD</strong></p>
+          <p>Amount: 3000</p>
+        </div>
+        <a
+          href="https://www.everheal.com"
+          style="
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            background-color: #5c198d;
+            color: #fff;
+            border-radius: 10px;
+            text-decoration: none;
+          "
+          >Return to Home</a
+        >
+      </div> -->
+      <!-- {{/is_success}} -->
+      <!-- <div class="order-info">
+        <p>Order ID: <strong>PAODODOOSDOOSD</strong></p>
+        <p>Amount: 3000</p>
+    </div> -->
+    </div>
+  </body>
+</html>
